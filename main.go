@@ -25,11 +25,11 @@ func game() {
 		game()
 	}
 
-	if fh == "rock" && sh == "scissors" {
+	if fh == "rock" && sh == "scissors" || fh == "scissors" && sh == "paper" || fh == "paper" && sh == "rock" {
 		fmt.Println("First player win, game set")
 	}
 
-	if fh == "rock" && sh == "paper" {
+	if fh == "rock" && sh == "paper" || fh == "scissors" && sh == "rock" || fh == "paper" && sh == "scissors" {
 		fmt.Println("Second player win, game set")
 	}
 }
