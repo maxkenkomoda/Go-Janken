@@ -1,6 +1,7 @@
 package main
 
 import (
+	"Go-Janken/src/player"
 	"fmt"
 	"math/rand"
 	"time"
@@ -9,6 +10,7 @@ import (
 var hs = []string{"rock", "scissors", "paper"}
 
 func main() {
+	player.Main()
 	game()
 }
 
