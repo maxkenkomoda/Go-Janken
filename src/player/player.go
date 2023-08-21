@@ -3,27 +3,41 @@ package player
 import "fmt"
 
 type PlayerType string
+type HandType string
 
 const (
 	Human    PlayerType = "human"
 	Computer PlayerType = "computer"
 )
 
+const (
+	Rock     HandType = "rock"
+	Scissors HandType = "scissors"
+	Paper    HandType = "paper"
+)
+
 type Player struct {
-	playerType PlayerType
-	isDead     bool
-	name       string
+	PlayerType PlayerType
+	IsDead     bool
+	Name       string
+	Hand       HandType
 }
 
-func Main() {
-	plyer := &Player{
-		playerType: Human,
-		isDead:     false,
-		name:       "Player 1",
+func Main(playerType PlayerType, isDead bool, name string, hand HandType) *Player {
+	player := &Player{
+		PlayerType: playerType,
+		IsDead:     isDead,
+		Name:       name,
+		Hand:       hand,
 	}
-	fmt.Println(plyer.CreateGreetingText())
+
+	return player
 }
 
-func (p *Player) CreateGreetingText() string {
-	return "Hello, " + p.name + "!"
+func Greeting(p *Player) {
+	fmt.Println("Hi, my name is " + p.Name + "! " + "Type is " + string(p.PlayerType) + "! " + "Hand is " + string(p.Hand))
+}
+
+func ChangeHand(p *Player, hand HandType) {
+	p.Hand = hand
 }
