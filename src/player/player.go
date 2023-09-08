@@ -38,6 +38,10 @@ func Greeting(p *Player) {
 	fmt.Println("Hi, my name is " + p.Name + "! " + "Type is " + string(p.PlayerType) + "! " + "Hand is " + string(p.Hand))
 }
 
-func ChangeHand(p *Player, hand HandType) {
+func (p *Player) ChangeHand(hand HandType) {
 	p.Hand = hand
+}
+
+func (p *Player) ChangeIsDead() {
+	p.IsDead = true
 }
